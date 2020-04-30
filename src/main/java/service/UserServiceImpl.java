@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public String registerUser(User user) {
         //user.registerDate = LocalDate.now();
-        int i = userRepository.addUser(null);
+        int i = userRepository.addUser(user);
         System.out.println(i+"");
         return null;
     }

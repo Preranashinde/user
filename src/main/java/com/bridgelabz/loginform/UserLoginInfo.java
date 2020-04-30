@@ -18,16 +18,16 @@ public class UserLoginInfo {
         }
     }
     private static void addNewUser() {
-       /* Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your first name");
-        String firstName = scanner.nextLine();
+        String firstName = scanner.next();
         System.out.println("Enter your last name");
-        String lastName = scanner.nextLine();
+        String lastName = scanner.next();
         System.out.println("Enter your mobile number");
-        String mobileNumber = scanner.nextLine();
+        String mobileNumber = scanner.next();
         System.out.println("Enter your address");
-        String address = scanner.nextLine();
-        User user = new User(firstName,lastName,mobileNumber,address);*/
-        userService.registerUser(null);
+        String address = scanner.next();
+        User user = new User(firstName,lastName,mobileNumber,address);
+        userService.registerUser(user);
     }
 }

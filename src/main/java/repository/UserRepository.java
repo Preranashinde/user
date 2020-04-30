@@ -6,10 +6,8 @@ import java.sql.*;
 
 public class UserRepository {
     public int addUser(User user) {
-       /* String query = "INSERT INTO UserData VALUES ("
-                + "'" + user.firstName + "', '" + user.lastName + "', '" + user.mobileNumber +
-         "', '" + user.address + "')";*/
-       String query = "show databases";
+       String query = "INSERT INTO UserData VALUES ('" + user.firstName + "', '" + user.lastName + "', '" + user.mobileNumber +
+         "', '" + user.address + "')";
         System.out.println(query);
         Connection connection = getConnection();
         Statement statement = null;
@@ -17,7 +15,7 @@ public class UserRepository {
             statement = connection.createStatement();
             int i = statement.executeUpdate(query);
             connection.close();
-            return  i;
+            return i;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -27,8 +25,9 @@ public class UserRepository {
     private Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/",
-                    "root", "vibha");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login",
+                    "root", "root");
+            return connection;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }catch (SQLException e){
